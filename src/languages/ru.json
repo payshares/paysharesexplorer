@@ -126,8 +126,8 @@
   "settings.trustlines": "Доверие",
   "signers": "Ключи",
   "signing": "Ключи",
-  "stellar.address": "Стеллар адрес",
-  "stellar": "Стеллар",
+  "payshares.address": "Стеллар адрес",
+  "payshares": "Стеллар",
 
   "thresholds": "Уровни",
   "threshold.low": "Низкий",

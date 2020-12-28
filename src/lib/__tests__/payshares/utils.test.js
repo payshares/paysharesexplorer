@@ -1,14 +1,14 @@
 import {
   isPublicKey,
-  isStellarAddress,
+  isPaysharesAddress,
   isTxHash,
-  stroopsToLumens,
-} from '../../stellar/utils'
+  stroopsToStakks,
+} from '../../payshares/utils'
 
-it('stroopsToLumens converts correctly', () => {
-  expect(stroopsToLumens(100)).toBe(0.00001)
-  expect(stroopsToLumens(5000000)).toBe(0.5)
-  expect(stroopsToLumens(5000000000)).toBe(500)
+it('stroopsToStakks converts correctly', () => {
+  expect(stroopsToStakks(100)).toBe(0.00001)
+  expect(stroopsToStakks(5000000)).toBe(0.5)
+  expect(stroopsToStakks(5000000000)).toBe(500)
 })
 
 it('isPublicKey identifies a valid key', () => {
@@ -32,16 +32,16 @@ it('isPublicKey identifies a valid key', () => {
   ).toBe(true)
 })
 
-it('isStellarAddress identifies a valid stellar address', () => {
-  expect(isStellarAddress()).toBe(false)
-  expect(isStellarAddress('')).toBe(false)
-  expect(isStellarAddress(null)).toBe(false)
+it('isPaysharesAddress identifies a valid payshares address', () => {
+  expect(isPaysharesAddress()).toBe(false)
+  expect(isPaysharesAddress('')).toBe(false)
+  expect(isPaysharesAddress(null)).toBe(false)
 
-  expect(isStellarAddress('comma,forbidden*stellar.org')).toBe(false)
-  expect(isStellarAddress('two*asterisk*stellar.org')).toBe(false)
+  expect(isPaysharesAddress('comma,forbidden*payshares.org')).toBe(false)
+  expect(isPaysharesAddress('two*asterisk*payshares.org')).toBe(false)
 
-  expect(isStellarAddress('jed*stellar.org')).toBe(true)
-  expect(isStellarAddress('hatch1234*some-domain-888.a.b.c')).toBe(true)
+  expect(isPaysharesAddress('jed*payshares.org')).toBe(true)
+  expect(isPaysharesAddress('hatch1234*some-domain-888.a.b.c')).toBe(true)
 })
 
 it('isTxHash identifies a valid transaction hash', () => {

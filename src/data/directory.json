@@ -66,10 +66,10 @@
         "USD": "USD-GDSRCV5VTM3U7Y3L6DFRP3PEGBNQMGOWSRTGSBWX6Z3H6C7JHRI4XFJP"
       }
     },
-    "interstellar.exchange": {
-      "name": "interstellar.exchange",
-      "displayName": "Interstellar",
-      "website": "https://interstellar.exchange",
+    "interpayshares.exchange": {
+      "name": "interpayshares.exchange",
+      "displayName": "Interpayshares",
+      "website": "https://interpayshares.exchange",
       "assets": {
         "ISX": "ISX-GD5Y5Q44JXBANL4LWS53O6RYGOJCLH7P5EFOIUX5KWGN2GG3QHI5T72E",
         "BTC": "BTC-GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P",
@@ -431,10 +431,10 @@
         "TON": "TON-GBFJGO46OV6E2QS2ZUMCF256ZL4BFOZWFHULRNLPSPW47HH5HFAKJTON"
       }
     },
-    "superlumen.org": {
-      "name": "superlumen.org",
-      "displayName": "Superlumens",
-      "website": "https://www.superlumen.org/",
+    "superstakk.org": {
+      "name": "superstakk.org",
+      "displayName": "Superstakks",
+      "website": "https://www.superstakk.org/",
       "assets": {
         "SLM": "SLM-GCEGERI7COJYNNID6CYSKS5DPPLGCCLPTOSCDD2LG5SJIVWM5ISUPERI"
       },
@@ -521,10 +521,10 @@
       "name": "Mobius Issuer"
     },
     "GDCHDRSDOBRMSUDKRE2C4U4KDLNEATJPIHHR2ORFL5BSD56G4DQXL4VW": {
-      "name": "StellarTerm Inflation"
+      "name": "PaysharesTerm Inflation"
     },
     "GCCD6AJOYZCUAQLX32ZJF2MKFFAUJ53PVCFQI3RHWKL3V47QYE2BNAUT": {
-      "name": "Lumenaut Inflation"
+      "name": "Stakkaut Inflation"
     },
     "GBTCBCWLE6YVTR5Y5RRZC36Z37OH22G773HECWEIZTZJSN4WTG3CSOES": {
       "name": "NaoBTC"
@@ -557,32 +557,32 @@
     "ISX-GD5Y5Q44JXBANL4LWS53O6RYGOJCLH7P5EFOIUX5KWGN2GG3QHI5T72E": {
       "code": "ISX",
       "issuer": "GD5Y5Q44JXBANL4LWS53O6RYGOJCLH7P5EFOIUX5KWGN2GG3QHI5T72E",
-      "domain": "interstellar.exchange"
+      "domain": "interpayshares.exchange"
     },
     "BTC-GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P": {
       "code": "BTC",
       "issuer": "GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P",
-      "domain": "interstellar.exchange"
+      "domain": "interpayshares.exchange"
     },
     "LTC-GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P": {
       "code": "LTC",
       "issuer": "GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P",
-      "domain": "interstellar.exchange"
+      "domain": "interpayshares.exchange"
     },
     "ETH-GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P": {
       "code": "ETH",
       "issuer": "GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P",
-      "domain": "interstellar.exchange"
+      "domain": "interpayshares.exchange"
     },
     "XRP-GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P": {
       "code": "XRP",
       "issuer": "GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P",
-      "domain": "interstellar.exchange"
+      "domain": "interpayshares.exchange"
     },
     "XAF-GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P": {
       "code": "XAF",
       "issuer": "GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P",
-      "domain": "interstellar.exchange"
+      "domain": "interpayshares.exchange"
     },
     "USD-GDUKMGUGDZQK6YHYA5Z6AY2G4XDSZPSZ3SW5UN3ARVMO6QSRDWP5YLEX": {
       "code": "USD",

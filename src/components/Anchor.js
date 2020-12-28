@@ -10,7 +10,7 @@ import AccountLink from './shared/AccountLink'
 import ClipboardCopy from './shared/ClipboardCopy'
 import Logo from './shared/Logo'
 import NewWindowIcon from './shared/NewWindowIcon'
-import StellarTomlBadge from './shared/StellarTomlBadge'
+import PaysharesTomlBadge from './shared/PaysharesTomlBadge'
 
 import {assetKeyToIssuer, setTitle} from '../lib/utils'
 
@@ -62,7 +62,7 @@ class Anchor extends React.Component {
                       </a>
                     </div>
                     <div style={{marginTop: 15}}>
-                      <StellarTomlBadge domain={domain} />
+                      <PaysharesTomlBadge domain={domain} />
                     </div>
                   </td>
                 </tr>

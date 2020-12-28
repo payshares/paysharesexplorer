@@ -12,7 +12,7 @@ import {withRouter} from 'react-router'
 import {injectIntl} from 'react-intl'
 
 import {searchStrToPath} from '../../lib/search'
-import {isSecretKey} from '../../lib/stellar/utils'
+import {isSecretKey} from '../../lib/payshares/utils'
 
 const HelpModal = props => (
   <Modal id="help-modal" show={props.show} onHide={props.handleCloseFn}>
@@ -25,17 +25,17 @@ const HelpModal = props => (
       <h4>Search By:</h4>
       <br />
       <div>
-        <h5>Stellar Address</h5>
+        <h5>Payshares Address</h5>
         Also called a{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.stellar.org/developers/guides/concepts/federation.html#stellar-addresses"
+          href="https://www.payshares.org/developers/guides/concepts/federation.html#payshares-addresses"
         >
-          Stellar federated address
+          Payshares federated address
         </a>
         <img
-          src={`${process.env.PUBLIC_URL}/search/search_stellar_address.png`}
+          src={`${process.env.PUBLIC_URL}/search/search_payshares_address.png`}
           alt="search by ledger"
         />
       </div>
@@ -105,7 +105,7 @@ const HelpModal = props => (
       <hr />
       <h4>OpenSearch:</h4>
       <div>
-        Stellar Explorer supports{' '}
+        Payshares Explorer supports{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -115,7 +115,7 @@ const HelpModal = props => (
         </a>
         . This allows you to search directly from your browser search box or
         search bar. You should see something like the following when you
-        navigate to Stellar Explorer then open the search box. Install it from
+        navigate to Payshares Explorer then open the search box. Install it from
         there:
         <br />
         <img

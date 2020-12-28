@@ -1,6 +1,6 @@
 {
   "short_name": "steexp",
-  "name": "Stellar Explorer",
+  "name": "Payshares Explorer",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

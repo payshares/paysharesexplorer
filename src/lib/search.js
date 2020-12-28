@@ -2,14 +2,14 @@ import isNaN from 'lodash/isNaN'
 import isEmpty from 'lodash/isEmpty'
 import isString from 'lodash/isString'
 import toNumber from 'lodash/toNumber'
-import {sdk} from './stellar'
+import {sdk} from './payshares'
 
 import {
   isPublicKey,
   isSecretKey,
-  isStellarAddress,
+  isPaysharesAddress,
   isTxHash,
-} from './stellar/utils'
+} from './payshares/utils'
 import directory from '../data/directory'
 
 const {anchors, assets} = directory
@@ -39,7 +39,7 @@ const searchStrToPath = searchStr => {
 
   const str = searchStr.trim()
 
-  if (isPublicKey(str) || isStellarAddress(str)) {
+  if (isPublicKey(str) || isPaysharesAddress(str)) {
     return `/account/${str}`
   } else if (isTxHash(str)) {
     return `/tx/${str}`

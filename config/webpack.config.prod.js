@@ -315,9 +315,9 @@ module.exports = {
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       runtimeCaching: [
-        { // Cache the stellarterm directory for a couple of days as the asset
+        { // Cache the paysharesterm directory for a couple of days as the asset
           // lists don't change often
-          urlPattern: /^https:\/\/api\.stellarterm\.com\/v1\/ticker.json/,
+          urlPattern: /^https:\/\/api\.paysharesterm\.com\/v1\/ticker.json/,
           handler: 'cacheFirst',
           options: {
             cache: {
@@ -328,7 +328,7 @@ module.exports = {
         },
 
         { // Cache price updates for 5 minutes
-          urlPattern: /^https:\/\/api\.coinmarketcap\.com\/v1\/ticker\/stellar\//,
+          urlPattern: /^https:\/\/api\.coinmarketcap\.com\/v1\/ticker\/payshares\//,
           handler: 'cacheFirst',
           options: {
             cache: {
@@ -338,7 +338,7 @@ module.exports = {
           },
         },
         { // Cache sponsored link banner fetches for 6 hours
-          urlPattern: /^https:\/\/raw.githubusercontent.com\/chatch\/stellarexplorer\/master\/banner.json/,
+          urlPattern: /^https:\/\/raw.githubusercontent.com\/chatch\/paysharesexplorer\/master\/banner.json/,
           handler: 'cacheFirst',
           options: {
             cache: {

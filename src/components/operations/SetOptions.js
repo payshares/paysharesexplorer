@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {FormattedMessage} from 'react-intl'
-import {StrKey} from 'stellar-sdk'
+import {PsrKey} from 'payshares-sdk'
 import AccountLink from '../shared/AccountLink'
 import snakeCase from 'lodash/snakeCase'
-import {isPublicKey} from '../../lib/stellar/utils'
+import {isPublicKey} from '../../lib/payshares/utils'
 import {shortHash} from '../../lib/utils'
 
 const propTypes = {
@@ -45,8 +45,8 @@ const OptionValue = ({optKey, value}) => {
     // and !isPublicKey (#19)
     const decodedValue =
       value.charAt(0) === 'X'
-        ? StrKey.decodeSha256Hash(value).toString('hex')
-        : StrKey.decodePreAuthTx(value).toString('hex')
+        ? PsrKey.decodeSha256Hash(value).toString('hex')
+        : PsrKey.decodePreAuthTx(value).toString('hex')
     valueEl = <span title={decodedValue}>{shortHash(decodedValue)}</span>
   } else if (optKey === 'homeDomain') {
     valueEl = <a href={`http://${value}`}>{value}</a>

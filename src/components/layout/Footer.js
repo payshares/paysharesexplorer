@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
-// import LumensRates from '../shared/LumensRates'
+// import StakksRates from '../shared/StakksRates'
 
 class Footer extends React.PureComponent {
   render() {
@@ -11,11 +11,11 @@ class Footer extends React.PureComponent {
         <Row>
           <Col md={3}>
             {
-              // Disable rates for now, it doesn't refresh correctly: <LumensRates/>
+              // Disable rates for now, it doesn't refresh correctly: <StakksRates/>
             }
           </Col>
           <Col mdOffset={7} md={2}>
-            <a href="https://github.com/chatch/stellarexplorer">
+            <a href="https://github.com/chatch/paysharesexplorer">
               <img
                 src={`${process.env.PUBLIC_URL}/img/gh.svg`}
                 alt="github"
@@ -28,7 +28,7 @@ class Footer extends React.PureComponent {
         </Row>
         <Row>
           <Col mdOffset={10} md={2}>
-            <a href="https://github.com/chatch/stellarexplorer/issues">
+            <a href="https://github.com/chatch/paysharesexplorer/issues">
               <img
                 src={`${process.env.PUBLIC_URL}/img/support.svg`}
                 alt="support"
@@ -41,14 +41,14 @@ class Footer extends React.PureComponent {
         </Row>
         <Row>
           <Col mdOffset={10} md={2}>
-            <a href="https://stellar.org">
+            <a href="https://payshares.org">
               <img
-                src={`${process.env.PUBLIC_URL}/stellar.ico`}
-                alt="stellar"
+                src={`${process.env.PUBLIC_URL}/payshares.ico`}
+                alt="payshares"
                 height={20}
                 width={20}
               />
-              Stellar.org
+              Payshares.org
             </a>
           </Col>
         </Row>

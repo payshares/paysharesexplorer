@@ -1,4 +1,4 @@
-//import directory from 'stellarterm-directory/directory.json'
+//import directory from 'paysharesterm-directory/directory.json'
 import directory from './directory.json'
 
 // adds / overrides:

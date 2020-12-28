@@ -43,7 +43,7 @@
   "error.occurred": "An error occurred: ",
   "error.insecure-network": "The horizon address is insecure!",
   "error.insecure-network.uri": "The horizon address \"{uri}\" is insecure!",
-  "error.insecure-network.reason": "You probably tried to set a horizon address with the prefix \"http\" instead of \"https\". Stellar allows \"http\" only for testnets.",
+  "error.insecure-network.reason": "You probably tried to set a horizon address with the prefix \"http\" instead of \"https\". Payshares allows \"http\" only for testnets.",
 
   "exchanges": "Exchanges",
 
@@ -167,8 +167,8 @@
   "signing": "Signing",
   "sold": "Sold",
   "source.account": "Source",
-  "stellar.address": "Stellar Address",
-  "stellar": "Stellar",
+  "payshares.address": "Payshares Address",
+  "payshares": "Payshares",
   "subentry.count": "Subentry Count",
 
   "thresholds": "Thresholds",
@@ -176,7 +176,7 @@
   "threshold.medium": "Medium",
   "threshold.high": "High",
   "time": "Time",
-  "title": "Stellar Explorer",
+  "title": "Payshares Explorer",
   "total.coins": "Total Coins",
   "trade": "Trade",
   "trades": "Trades",

@@ -162,8 +162,8 @@
   "signing": "签名",
   "sold": "售出",
   "source.account": "源地址",
-  "stellar.address": "恒星地址",
-  "stellar": "恒星",
+  "payshares.address": "恒星地址",
+  "payshares": "恒星",
   "subentry.count": "子条目数量",
 
   "thresholds": "阈值",

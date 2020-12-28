@@ -5,7 +5,7 @@ import App from '../App'
 import '../__mocks__/MockXHR.js'
 
 // avoid the call out to get the rate
-jest.mock('../components/shared/LumensRates', () => 'rates')
+jest.mock('../components/shared/StakksRates', () => 'rates')
 
 it('renders without crashing', () => {
   const div = document.createElement('div')

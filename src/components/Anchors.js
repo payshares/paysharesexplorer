@@ -11,7 +11,7 @@ import AccountLink from './shared/AccountLink'
 import ClipboardCopy from './shared/ClipboardCopy'
 import Logo from './shared/Logo'
 import NewWindowIcon from './shared/NewWindowIcon'
-import StellarTomlBadge from './shared/StellarTomlBadge'
+import PaysharesTomlBadge from './shared/PaysharesTomlBadge'
 import {titleWithJSONButton} from './shared/TitleWithJSONButton'
 
 import {assetKeyToIssuer, setTitle} from '../lib/utils'
@@ -20,10 +20,10 @@ import directory from '../data/directory'
 const {anchors} = directory
 
 const METADATA_PATH =
-  'https://raw.githubusercontent.com/irisli/stellarterm/master/directory/directory.json'
+  'https://raw.githubusercontent.com/irisli/paysharesterm/master/directory/directory.json'
 
 const tradeURL = (assetCode, issuerDomain) =>
-  `https://stellarterm.com/#exchange/XLM-native/${assetCode}-${issuerDomain}`
+  `https://paysharesterm.com/#exchange/XPS-native/${assetCode}-${issuerDomain}`
 
 // render list of asset codes, each code on a new line
 const AssetCodeColumn = ({assets}) => (
@@ -79,7 +79,7 @@ const Anchor = ({assets, domain, displayName, website}) => {
           </a>
         </div>
         <div>
-          <StellarTomlBadge domain={domain} />
+          <PaysharesTomlBadge domain={domain} />
         </div>
       </td>
       <td>
@@ -125,7 +125,7 @@ class Anchors extends React.Component {
                   <th>
                     <FormattedMessage id="issuer" />
                   </th>
-                  <th>StellarTerm</th>
+                  <th>PaysharesTerm</th>
                 </tr>
               </thead>
               <tbody>

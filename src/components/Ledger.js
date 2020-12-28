@@ -14,7 +14,7 @@ import {
 } from 'react-intl'
 import has from 'lodash/has'
 
-import {stroopsToLumens} from '../lib/stellar/utils'
+import {stroopsToStakks} from '../lib/payshares/utils'
 import {handleFetchDataFailure, setTitle, shortHash} from '../lib/utils'
 import ClipboardCopy from './shared/ClipboardCopy'
 import {withServer} from './shared/HOCs'
@@ -26,7 +26,7 @@ const ledgerHash = hash => shortHash(hash, 20)
 const responseToState = rsp => {
   setTitle(`Ledger ${rsp.sequence}`)
   // NOTE: as at 11 March 2018 testnet horizon returns base values in stroops
-  //        but mainnet returns in lumens. so handling both until all are moved
+  //        but mainnet returns in stakks. so handling both until all are moved
   //        to stroops.
   const baseInStroops = has(rsp, 'base_fee_in_stroops')
   return {
@@ -129,15 +129,15 @@ class Ledger extends React.Component {
                   </DetailRow>
                   <DetailRow label="base.reserve">
                     {baseInStroops
-                      ? stroopsToLumens(baseReserve)
+                      ? stroopsToStakks(baseReserve)
                       : Number(baseReserve)}{' '}
-                    XLM
+                    XPS
                   </DetailRow>
                   <DetailRow label="fee.pool">
-                    <FormattedNumber value={feePool} /> XLM
+                    <FormattedNumber value={feePool} /> XPS
                   </DetailRow>
                   <DetailRow label="total.coins">
-                    <FormattedNumber value={totalCoins} /> XLM
+                    <FormattedNumber value={totalCoins} /> XPS
                   </DetailRow>
                   <DetailRow label="protocolVersion">{protocol}</DetailRow>
                 </tbody>

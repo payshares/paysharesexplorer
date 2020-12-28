@@ -1,5 +1,5 @@
 import React from 'react'
-import {networks} from '../../lib/stellar'
+import {networks} from '../../lib/payshares'
 import CustomNetworkButton from '../shared/CustomNetworkButton'
 
 const NetworkButton = ({networkType, selectedNetworkType, switchNetworkType}) =>

@@ -155,8 +155,8 @@ const withDataFetchingContainer = (
     }
 
     // NOTE: errors stream in here regularly. see this issue in horizon:
-    //       https://github.com/stellar/horizon/issues/119
-    //       js-stellar-sdk reconnects each stream every 30 - 50 seconds or so
+    //       https://github.com/payshares/horizon/issues/119
+    //       js-payshares-sdk reconnects each stream every 30 - 50 seconds or so
     //       so we see 1 or 2 each minute for each stream.
     onStreamError(error) {
       console.error('stream error (most likely horizon #119):')

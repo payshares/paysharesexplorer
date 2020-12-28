@@ -1,8 +1,8 @@
-# Stellar Explorer
+# Payshares Explorer
 
-[![Build Status](https://travis-ci.org/chatch/stellarexplorer.svg?branch=master)](https://travis-ci.org/chatch/stellarexplorer)
+[![Build Status](https://travis-ci.org/chatch/paysharesexplorer.svg?branch=master)](https://travis-ci.org/chatch/paysharesexplorer)
 
-A ledger explorer for [Stellar](https://stellar.org).
+A ledger explorer for [Payshares](https://payshares.org).
 
 Public: https://steexp.com
 Test: https://testnet.steexp.com
@@ -33,23 +33,23 @@ Local: http://localhost:3000
 
 | Resource             | URI                                                                                                                                                      |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| by Federated address | [/account/stellar\*fed.network](https://steexp.com/account/stellar*fed.network)                                                                          |
+| by Federated address | [/account/payshares\*fed.network](https://steexp.com/account/payshares*fed.network)                                                                          |
 | by Public address    | [/account/GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX](https://steexp.com/account/GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX) |
 
 #### Tabs
 
 | Resource         | URI                                                                                                       |
 | ---------------- | --------------------------------------------------------------------------------------------------------- |
-| Balances Tab     | [/account/stellar\*fed.network#balances](https://steexp.com/account/stellar*fed.network#balances)         |
-| Payments Tab     | [/account/stellar\*fed.network#payments](https://steexp.com/account/stellar*fed.network#payments)         |
-| Offers Tab       | [/account/stellar\*fed.network#offers](https://steexp.com/account/stellar*fed.network#offers)             |
-| Trades Tab       | [/account/stellar\*fed.network#trades](https://steexp.com/account/stellar*fed.network#trades)             |
-| Effects Tab      | [/account/stellar\*fed.network#effects](https://steexp.com/account/stellar*fed.network#effects)           |
-| Operations Tab   | [/account/stellar\*fed.network#operations](https://steexp.com/account/stellar*fed.network#operations)     |
-| Transactions Tab | [/account/stellar\*fed.network#transactions](https://steexp.com/account/stellar*fed.network#transactions) |
-| Signing Tab      | [/account/stellar\*fed.network#signing](https://steexp.com/account/stellar*fed.network#signing)           |
-| Flags Tab        | [/account/stellar\*fed.network#flags](https://steexp.com/account/stellar*fed.network#flags)               |
-| Data Tab         | [/account/stellar\*fed.network#data](https://steexpcom/account/stellar*fed.network#data)                  |
+| Balances Tab     | [/account/payshares\*fed.network#balances](https://steexp.com/account/payshares*fed.network#balances)         |
+| Payments Tab     | [/account/payshares\*fed.network#payments](https://steexp.com/account/payshares*fed.network#payments)         |
+| Offers Tab       | [/account/payshares\*fed.network#offers](https://steexp.com/account/payshares*fed.network#offers)             |
+| Trades Tab       | [/account/payshares\*fed.network#trades](https://steexp.com/account/payshares*fed.network#trades)             |
+| Effects Tab      | [/account/payshares\*fed.network#effects](https://steexp.com/account/payshares*fed.network#effects)           |
+| Operations Tab   | [/account/payshares\*fed.network#operations](https://steexp.com/account/payshares*fed.network#operations)     |
+| Transactions Tab | [/account/payshares\*fed.network#transactions](https://steexp.com/account/payshares*fed.network#transactions) |
+| Signing Tab      | [/account/payshares\*fed.network#signing](https://steexp.com/account/payshares*fed.network#signing)           |
+| Flags Tab        | [/account/payshares\*fed.network#flags](https://steexp.com/account/payshares*fed.network#flags)               |
+| Data Tab         | [/account/payshares\*fed.network#data](https://steexpcom/account/payshares*fed.network#data)                  |
 
 ### Search
 
@@ -112,6 +112,6 @@ npm i && npm run build
 Use the language selector in the top right corner to change the language.
 
 Translation files are here:
-https://github.com/chatch/stellarexplorer/tree/master/src/languages
+https://github.com/chatch/paysharesexplorer/tree/master/src/languages
 
 Submit pull requests with new languages or languages fixes there.

@@ -7,11 +7,11 @@ import Table from 'react-bootstrap/lib/Table'
 import Tab from 'react-bootstrap/lib/Tab'
 import Tabs from 'react-bootstrap/lib/Tabs'
 import {injectIntl, FormattedMessage} from 'react-intl'
-import {FederationServer, StrKey} from 'stellar-sdk'
+import {FederationServer, PsrKey} from 'payshares-sdk'
 import has from 'lodash/has'
 
 import knownAccounts from '../data/known_accounts'
-import {isPublicKey, isStellarAddress} from '../lib/stellar/utils'
+import {isPublicKey, isPaysharesAddress} from '../lib/payshares/utils'
 import {base64Decode, handleFetchDataFailure, setTitle} from '../lib/utils'
 import {withServer} from './shared/HOCs'
 import {withSpinner} from './shared/Spinner'
@@ -29,11 +29,11 @@ import PaymentTable from './PaymentTable'
 import TradeTable from './TradeTable'
 import TransactionTable from './TransactionTableContainer'
 
-const stellarAddressFromURI = () => {
+const paysharesAddressFromURI = () => {
   if (!window || !window.location || !window.location.pathname) return
   const path = window.location.pathname
   const lastPath = path.substring(path.lastIndexOf('/') + 1)
-  return isStellarAddress(lastPath) ? lastPath : undefined
+  return isPaysharesAddress(lastPath) ? lastPath : undefined
 }
 
 const NameValueTable = ({data, decodeValue = false}) => {
@@ -70,7 +70,7 @@ const NameValueTable = ({data, decodeValue = false}) => {
 }
 
 const balanceRow = bal => (
-  <tr key={bal.asset_code ? `${bal.asset_code}-${bal.asset_issuer}` : 'XLM'}>
+  <tr key={bal.asset_code ? `${bal.asset_code}-${bal.asset_issuer}` : 'XPS'}>
     <td>
       <Asset
         type={bal.asset_type}
@@ -156,9 +156,9 @@ const Signers = props => (
               <AccountLink account={signer.key} />
             )}
             {signer.type === 'sha256_hash' &&
-              StrKey.decodeSha256Hash(signer.key).toString('hex')}
+              PsrKey.decodeSha256Hash(signer.key).toString('hex')}
             {signer.type === 'preauth_tx' &&
-              StrKey.decodePreAuthTx(signer.key).toString('hex')}
+              PsrKey.decodePreAuthTx(signer.key).toString('hex')}
           </td>
           <td>{signer.weight}</td>
           <td>{signer.type}</td>
@@ -183,7 +183,7 @@ const AccountSummaryPanel = ({
     formatMessageFn({id: 'account'}),
     accountUrl
   )
-  const stellarAddr = stellarAddressFromURI()
+  const paysharesAddr = paysharesAddressFromURI()
 
   return (
     <Panel header={header}>
@@ -199,12 +199,12 @@ const AccountSummaryPanel = ({
                 <ClipboardCopy text={a.id} />
               </Col>
             </Row>
-            {stellarAddr && (
+            {paysharesAddr && (
               <Row>
                 <Col md={3}>
-                  <FormattedMessage id="stellar.address" />:
+                  <FormattedMessage id="payshares.address" />:
                 </Col>
-                <Col md={9}>{stellarAddr}</Col>
+                <Col md={9}>{paysharesAddr}</Col>
               </Row>
             )}
             <Row>
@@ -409,20 +409,20 @@ class AccountContainer extends React.Component {
 
   loadAccount(accountId) {
     if (isPublicKey(accountId)) this.loadAccountByKey(accountId)
-    else if (isStellarAddress(accountId))
-      this.loadAccountByStellarAddress(accountId)
+    else if (isPaysharesAddress(accountId))
+      this.loadAccountByPaysharesAddress(accountId)
     else
       handleFetchDataFailure(accountId)(
         new Error(`Unrecognized account: ${accountId}`)
       )
   }
 
-  loadAccountByStellarAddress(stellarAddr) {
-    const [name, domain] = stellarAddr.split('*')
+  loadAccountByPaysharesAddress(paysharesAddr) {
+    const [name, domain] = paysharesAddr.split('*')
     FederationServer.createForDomain(domain)
       .then(fed => fed.resolveAddress(name))
       .then(acc => this.loadAccount(acc.account_id))
-      .catch(handleFetchDataFailure(stellarAddr))
+      .catch(handleFetchDataFailure(paysharesAddr))
   }
 
   loadAccountByKey(accountId) {

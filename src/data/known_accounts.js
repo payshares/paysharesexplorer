@@ -11,7 +11,7 @@ import directory from './directory'
 const {anchors, destinations} = directory
 
 /**
- * Produces a lookup of all known accounts keyed on the Stellar public address.
+ * Produces a lookup of all known accounts keyed on the Payshares public address.
  */
 
 const KnownAccountPropTypes = Object.freeze({

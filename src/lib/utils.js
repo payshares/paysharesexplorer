@@ -3,7 +3,7 @@ import {tmpdir} from 'os'
 import BigNumber from 'bignumber.js'
 import truncate from 'lodash/truncate'
 
-// Amounts in Stellar don't go below 7 decimals
+// Amounts in Payshares don't go below 7 decimals
 // So setting the EXPONENTIAL_AT to 8 here ensures all toString() will show the
 // numbers in full form. eg. 0.0000001 (not 1e7) which is what we want for
 // formatAmount().
@@ -66,7 +66,7 @@ const formatAmount = amount => {
   return new BigNumber(amount).toString()
 }
 
-const setTitle = subTitle => (document.title = `Stellar Explorer | ${subTitle}`)
+const setTitle = subTitle => (document.title = `Payshares Explorer | ${subTitle}`)
 
 export {
   assetKeyToIssuer,

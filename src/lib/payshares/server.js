@@ -2,13 +2,13 @@ import sdk from './sdk'
 import networks from './networks'
 
 export const defaultNetworkAddresses = {
-  public: 'https://horizon.stellar.org',
-  test: 'https://horizon-testnet.stellar.org',
-  local: 'http://localhost:8000',
+  public: 'https://horizon.payshares.org',
+  test: 'https://horizon-testnet.payshares.org',
+  local: 'http://localhost:8500',
 }
 
 /**
- * Wrap the stellar-sdk Server hiding setup of horizon addresses and adding
+ * Wrap the payshares-sdk Server hiding setup of horizon addresses and adding
  * some helper functions. These helpers are more easily mocked for testing then
  * direct use of sdk fluent api.
  */

@@ -1,31 +1,31 @@
-import sdk from 'stellar-sdk'
+import sdk from 'payshares-sdk'
 import URI from 'urijs'
 
-import {LedgerCallBuilder} from 'stellar-sdk/lib/ledger_call_builder'
-import {OperationCallBuilder} from 'stellar-sdk/lib/operation_call_builder'
-import {TransactionCallBuilder} from 'stellar-sdk/lib/transaction_call_builder'
-import {PaymentCallBuilder} from 'stellar-sdk/lib/payment_call_builder'
-import {OfferCallBuilder} from 'stellar-sdk/lib/offer_call_builder'
-import {EffectCallBuilder} from 'stellar-sdk/lib/effect_call_builder'
-import {AccountCallBuilder} from 'stellar-sdk/lib/account_call_builder'
-import {AssetsCallBuilder} from 'stellar-sdk/lib/assets_call_builder'
-import {TradesCallBuilder} from 'stellar-sdk/lib/trades_call_builder'
+import {LedgerCallBuilder} from 'payshares-sdk/lib/ledger_call_builder'
+import {OperationCallBuilder} from 'payshares-sdk/lib/operation_call_builder'
+import {TransactionCallBuilder} from 'payshares-sdk/lib/transaction_call_builder'
+import {PaymentCallBuilder} from 'payshares-sdk/lib/payment_call_builder'
+import {OfferCallBuilder} from 'payshares-sdk/lib/offer_call_builder'
+import {EffectCallBuilder} from 'payshares-sdk/lib/effect_call_builder'
+import {AccountCallBuilder} from 'payshares-sdk/lib/account_call_builder'
+import {AssetsCallBuilder} from 'payshares-sdk/lib/assets_call_builder'
+import {TradesCallBuilder} from 'payshares-sdk/lib/trades_call_builder'
 
 
 /* ----------------------------------------------------------
  *
- * Wraps the stellar-sdk to customise the paging behaviour.
+ * Wraps the payshares-sdk to customise the paging behaviour.
  *
  * ---------------------------------------------------------*/
 
 /**
- * Wrap the Stellar CallBuilder's to modify the default paging behaviour for
+ * Wrap the Payshares CallBuilder's to modify the default paging behaviour for
  * our needs. Make response.prev and response.next work like typical paging of
  * an ordered result set.
  *
- * @see [Stellar Paging docs](https://www.stellar.org/developers/horizon/reference/resources/page.html)
+ * @see [Payshares Paging docs](https://www.payshares.org/developers/horizon/reference/resources/page.html)
  */
-const wrapStellarCallBuilderWithWebPagePaging = CallBuilder => {
+const wrapPaysharesCallBuilderWithWebPagePaging = CallBuilder => {
   return class WrappedCallBuilder extends CallBuilder {
     wrapNext = rspNext => () => {
       return rspNext().then(rsp => {
@@ -49,25 +49,25 @@ const wrapStellarCallBuilderWithWebPagePaging = CallBuilder => {
       })
     }
 
-    wrap(stellarRsp) {
-      stellarRsp.next = this.wrapNext(stellarRsp.next)
-      stellarRsp.prev = this.wrapPrev(stellarRsp.prev)
-      return stellarRsp
+    wrap(paysharesRsp) {
+      paysharesRsp.next = this.wrapNext(paysharesRsp.next)
+      paysharesRsp.prev = this.wrapPrev(paysharesRsp.prev)
+      return paysharesRsp
     }
 
     /**
    * Calls the parent call() and modifies the response.
    */
     call() {
-      return super.call().then(stellarRsp => {
-        return this.wrap(stellarRsp)
+      return super.call().then(paysharesRsp => {
+        return this.wrap(paysharesRsp)
       })
     }
   }
 }
 
 /*
- * Wrap the stellar server calls we want to use modified paging on
+ * Wrap the payshares server calls we want to use modified paging on
  */
 
 const pagingCalls = {
@@ -85,7 +85,7 @@ const pagingCalls = {
 Object.keys(pagingCalls).forEach(
   callName =>
     (sdk.Server.prototype[callName] = function(...params) {
-      const WrappedClass = wrapStellarCallBuilderWithWebPagePaging(
+      const WrappedClass = wrapPaysharesCallBuilderWithWebPagePaging(
         pagingCalls[callName]
       )
       return new WrappedClass(URI(this.serverURL), ...params)

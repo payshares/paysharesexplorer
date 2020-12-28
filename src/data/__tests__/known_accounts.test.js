@@ -1,5 +1,5 @@
 import accounts from '../known_accounts'
-import {isPublicKey} from '../../lib/stellar/utils'
+import {isPublicKey} from '../../lib/payshares/utils'
 
 const findByName = name => {
   const addr = Object.keys(accounts).find(key => accounts[key].name === name)

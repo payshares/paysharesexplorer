@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import FetchPonyfill from 'fetch-ponyfill'
 const fetch = FetchPonyfill().fetch
 
-const FEED_URL = 'https://api.coinmarketcap.com/v1/ticker/stellar/'
+const FEED_URL = 'https://api.coinmarketcap.com/v1/ticker/payshares/'
 const UPDATE_INTERVAL = 5 * 60 * 1000
 
-class LumensRatesContainer extends React.PureComponent {
+class StakksRatesContainer extends React.PureComponent {
   componentDidMount() {
     this.updatePrice()
     this.intervalId = setInterval(
@@ -23,10 +23,10 @@ class LumensRatesContainer extends React.PureComponent {
     fetch(FEED_URL)
       .then(rsp => rsp.json())
       .then(rspJson => {
-        const lumens = rspJson[0]
+        const stakks = rspJson[0]
         const newState = {
-          change: lumens.percent_change_24h,
-          usd: lumens.price_usd,
+          change: stakks.percent_change_24h,
+          usd: stakks.price_usd,
         }
         this.setState(newState)
       })
@@ -38,11 +38,11 @@ class LumensRatesContainer extends React.PureComponent {
 
   render() {
     if (!this.state) return null
-    return <LumensRates {...this.state} />
+    return <StakksRates {...this.state} />
   }
 }
 
-class LumensRates extends React.PureComponent {
+class StakksRates extends React.PureComponent {
   isPositive(changeNumStr) {
     const asFloat = Number.parseFloat(changeNumStr)
     return Number.isNaN(asFloat) === false && Number(asFloat) >= 0
@@ -60,15 +60,15 @@ class LumensRates extends React.PureComponent {
   render() {
     return (
       <span>
-        XLM/USD: {this.props.usd} {this.renderChange(this.props.change)}
+        XPS/USD: {this.props.usd} {this.renderChange(this.props.change)}
       </span>
     )
   }
 }
 
-LumensRates.propTypes = {
+StakksRates.propTypes = {
   change: PropTypes.string.isRequired,
   usd: PropTypes.string.isRequired,
 }
 
-export {LumensRatesContainer as default, LumensRates}
+export {StakksRatesContainer as default, StakksRates}

@@ -20,7 +20,7 @@ import directory from '../data/directory'
 const {anchors, assets} = directory
 
 const METADATA_PATH =
-  'https://raw.githubusercontent.com/irisli/stellarterm/master/directory/directory.json'
+  'https://raw.githubusercontent.com/irisli/paysharesterm/master/directory/directory.json'
 
 const Asset = ({code, domain, issuer}) => {
   setTitle('Assets')
@@ -47,10 +47,10 @@ const Asset = ({code, domain, issuer}) => {
             <NewWindowIcon />
           </a>
         </div>
-        <div className="stellarToml">
+        <div className="paysharesToml">
           <BackendResourceBadgeButton
             label="server.toml"
-            url={`https://${domain}/.well-known/stellar.toml`}
+            url={`https://${domain}/.well-known/payshares.toml`}
           />
         </div>
       </td>

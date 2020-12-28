@@ -28,9 +28,9 @@ import Error from './components/shared/Error'
 import {Spinner} from './components/shared/Spinner'
 import InfoBanner from './components/shared/InfoBanner'
 
-import {networks, Server} from './lib/stellar'
-import {hostnameToNetworkType} from './lib/stellar/networks'
-import {defaultNetworkAddresses} from './lib/stellar/server'
+import {networks, Server} from './lib/payshares'
+import {hostnameToNetworkType} from './lib/payshares/networks'
+import {defaultNetworkAddresses} from './lib/payshares/server'
 import {storageInit} from './lib/utils'
 import {searchStrToPath} from './lib/search'
 

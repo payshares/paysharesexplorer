@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import BackendResourceBadgeButton from './BackendResourceBadgeButton'
 
 const Badge = ({domain}) => {
-  const tomlUrl = `https://${domain}/.well-known/stellar.toml`
+  const tomlUrl = `https://${domain}/.well-known/payshares.toml`
   return (
-    <span className="stellarToml">
+    <span className="paysharesToml">
       <BackendResourceBadgeButton label="server.toml" url={tomlUrl} />
     </span>
   )
