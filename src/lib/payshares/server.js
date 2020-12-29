@@ -4,7 +4,8 @@ import networks from './networks'
 export const defaultNetworkAddresses = {
   public: 'https://horizon.payshares.org',
   test: 'https://horizon-testnet.payshares.org',
-  local: 'http://localhost:8500',
+  // local: 'http://localhost:8500',
+  local: 'https://hr.payshares.org'
 }
 
 /**
